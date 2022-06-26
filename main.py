@@ -1,12 +1,13 @@
 import pygame, sys
 from settings import *
+from debug import debug
 
 class Game:
     # funcion inicializar la ventana o pantalla
     def __init__(self):
 
         # general setup
-        self.screen = pygame.display.set_mode(WIDTH, HEIGTH)
+        self.screen = pygame.display.set_mode((WIDTH,HEIGTH))
         # llamamos un o creamos un objeto que luego nos permitira seguir el paso del tiempo Framerate
         self.clock = pygame.time.Clock()
     
@@ -20,7 +21,7 @@ class Game:
                 if event.type == pygame.QUIT:
                     pygame.quit()
                     sys.exit()
-            
+            debug('hola como estan')
             # que color queremos que tenga la pantalla al iniciar
             self.screen.fill('black')
             # velocidad de refresco del programa
