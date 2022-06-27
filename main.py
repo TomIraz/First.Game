@@ -1,6 +1,6 @@
 import pygame, sys
 from settings import *
-from debug import debug
+from level import Level
 
 class Game:
     # funcion inicializar la ventana o pantalla
@@ -10,6 +10,9 @@ class Game:
         self.screen = pygame.display.set_mode((WIDTH,HEIGTH))
         # llamamos un o creamos un objeto que luego nos permitira seguir el paso del tiempo Framerate
         self.clock = pygame.time.Clock()
+        self.name = pygame.display.set_caption("Zelda")
+        # creamos una instancia u objeto de nuestro clase Level
+        self.level = Level()
     
     # funcion que nos dira cuando corre o no corre el juego
     def run(self):
@@ -21,13 +24,14 @@ class Game:
                 if event.type == pygame.QUIT:
                     pygame.quit()
                     sys.exit()
-            debug('hola como estan')
             # que color queremos que tenga la pantalla al iniciar
             self.screen.fill('black')
             # velocidad de refresco del programa
             pygame.display.update()
             # llamamos al objeto creado en la linea 11 y le decimos que la velocidad sea la de la variable FPS creada en settings
             self.clock.tick(FPS)
+            # le decimos que corra las instancias
+            self.level.run() 
 
 # le decimos que mientras que el programa se abra desde aca, que la clase Game() se llame game y que ejecute el game.run()
 if __name__ =="__main__":
