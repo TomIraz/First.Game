@@ -12,7 +12,7 @@ class Game:
         self.screen = pygame.display.set_mode((WIDTH,HEIGTH))
         # llamamos un o creamos un objeto que luego nos permitira seguir el paso del tiempo Framerate
         self.clock = pygame.time.Clock()
-        self.name = pygame.display.set_caption("Zelda")
+        self.name = pygame.display.set_caption("Pepito")
         # creamos una instancia u objeto de nuestro clase Level
         self.level = Level()
     
@@ -26,13 +26,12 @@ class Game:
                 if event.type == pygame.QUIT:
                     pygame.quit()
                     sys.exit()      
-            debug('hola te matare')
+            # actualizar el screen
+            pygame.display.update()
             # que color queremos que tenga la pantalla al iniciar
             self.screen.fill('black')
             # le decimos que corra las instancias
             self.level.run()
-            # velocidad de refresco del programa
-            pygame.display.update()
             # llamamos al objeto creado en la linea 11 y le decimos que la velocidad sea la de la variable FPS creada en settings
             self.clock.tick(FPS)
 

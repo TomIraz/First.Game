@@ -1,7 +1,8 @@
 import pygame
 from settings import *
 from tile import *
-
+from player import *
+from debug import debug
 class Level:
     def __init__(self):
         
@@ -22,10 +23,15 @@ class Level:
                 x = col_index*TILESIZE
                 y = row_index*TILESIZE
                 if col == 'x':
-                    Tile((x,y),[self.visible_sprites])
+                    Tile((x,y),([self.visible_sprites],[self.obstacles_sprites]))
+                if col == 'p':
+                    self.player = Player((x,y),[self.visible_sprites])
+                    debug(self.player.direction)
 
     def run(self):
         # quiero que dibujes esta variable que es conciderada un grupo de sprits dado que fue guardad en el contenedor
         # pygame.sprite.Group, y quiero que me lo muestres
         self.visible_sprites.draw(self.display_surface)
-        
+        # funcion que hace part de la clase Group y actualiza los sprites
+
+        debug(self.player.direction)

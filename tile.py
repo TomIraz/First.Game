@@ -8,7 +8,7 @@ class Tile(pygame.sprite.Sprite):
         # basicamente le decimos coloque la variable groups como objeto de del
         super().__init__(groups)
         # vamos a buscar una imagen de nuestro disco para mostrarla y la guardamos en la variable self.iamge
-        self.image = pygame.image.load('D:\Documentos\Proyectos\Python\First-game\graphics\est\ock.png').convert_alpha()
+        self.image = pygame.image.load("graphics\Zelda-main\level\graphics\prueba\prueba-roca.png").convert_alpha()
         # le decimos donde queremos que aparezca nuestra imagen y como la guardamos en la variable self.image lo hacemos asi
         self.rect = self.image.get_rect(topleft = pos)
         print('hola')
