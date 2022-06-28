@@ -13,9 +13,9 @@ def debug(info, y = 10, x = 10):
     # dibuja un texto en una nueva superficie establecida, y le decimos que muetre lo que este en la variable
     # info la cual debe estar en typo string, queremos que tenga antialias(que los pixeles de los bordes del texto esten desenfocados)
     # y por ultimo el color de la letra
-    debug_surf = font.render(str(info), True, 'White')
+    debug_surf = font.render(str(info), True, 'white')
     # ubicacion de la nueva superficie creada con render(), y le damos las variables brindadas al llamar la funcion
     debug_rect = debug_surf.get_rect(topleft = (x,y))
     # pygame.draw es un modulo para crear formas, lo usaremos para crear el cuadro de texto
-    pygame.draw.rect(display_surface, 'Black', debug_rect)
+    pygame.draw.rect(display_surface, 'black', debug_rect)
     display_surface.blit(debug_surf, debug_rect)

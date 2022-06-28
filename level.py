@@ -1,4 +1,6 @@
 import pygame
+from settings import *
+from tile import *
 
 class Level:
     def __init__(self):
@@ -11,7 +13,19 @@ class Level:
         # pygame.sprite.Group es un contenedor de clases con puede mantener y administrar multiples objetos sprite
         self.visible_sprites = pygame.sprite.Group()
         self.obstacles_sprites = pygame.sprite.Group()
+        # creamos el atributo create_map
+        self.create_map()
+        
+    def create_map(self):
+        for row_index, row in enumerate(WORLD_MAP):
+            for col_index, col in enumerate(row):
+                x = col_index*TILESIZE
+                y = row_index*TILESIZE
+                if col == 'x':
+                    Tile((x,y),[self.visible_sprites])
 
     def run(self):
-        # update and draw the game
-        pass
+        # quiero que dibujes esta variable que es conciderada un grupo de sprits dado que fue guardad en el contenedor
+        # pygame.sprite.Group, y quiero que me lo muestres
+        self.visible_sprites.draw(self.display_surface)
+        
