@@ -11,3 +11,4 @@ class Tile(pygame.sprite.Sprite):
         self.image = pygame.image.load('D:\Documentos\Proyectos\Python\First-game\graphics\est\ock.png').convert_alpha()
         # le decimos donde queremos que aparezca nuestra imagen y como la guardamos en la variable self.image lo hacemos asi
         self.rect = self.image.get_rect(topleft = pos)
+        print('hola')
